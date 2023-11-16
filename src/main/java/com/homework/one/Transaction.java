@@ -18,6 +18,12 @@ public class Transaction implements Runnable {
                 try {
                     if (toAccount.tryLock()) {
                         try {
+
+                            if (fromAccount.getBalance() < amount) {
+                                System.out.println("Insufficient funds in " + fromAccount + ": " + fromAccount.getBalance() + " to transfer $" + amount);
+                                return;
+                            }
+
                             System.out.println("Transferring $" + amount + " from " + fromAccount + " to " + toAccount);
                             System.out.println(
                                     "Before transfer: " + fromAccount + " has $" + fromAccount.getBalance() + ", "
@@ -35,7 +41,6 @@ public class Transaction implements Runnable {
                             System.out.println(
                                     "After transfer: " + fromAccount + " has $" + fromAccount.getBalance() + ", "
                                             + toAccount + " has $" + toAccount.getBalance());
-                            System.out.println();
 
                             return;
                         } finally {
