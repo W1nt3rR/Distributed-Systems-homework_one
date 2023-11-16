@@ -4,12 +4,12 @@ public class Bank {
     public static void main(String[] args) {
         Account[] accounts = new Account[10];
         for (int i = 0; i < accounts.length; i++) {
-            accounts[i] = new Account(1000);
+            accounts[i] = new Account(2000);
         }
 
         while (true) {
             try {
-                Thread.sleep(1000);
+                Thread.sleep((long) (Math.random() * 4000) + 1000);
             } catch (InterruptedException e) {
                 e.printStackTrace();
             }
