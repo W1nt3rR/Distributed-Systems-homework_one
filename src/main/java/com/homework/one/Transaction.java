@@ -21,7 +21,7 @@ public class Transaction implements Runnable {
             System.out.println("Before transfer: " + fromAccount + " has $" + fromAccount.getBalance() + ", " + toAccount + " has $" + toAccount.getBalance());
 
             try {
-                Thread.sleep((long) (Math.random() * 2000) + 1000);
+                Thread.sleep((long) (Math.random() * 9000) + 1000);
             } catch (InterruptedException e) {
                 e.printStackTrace();
             }
