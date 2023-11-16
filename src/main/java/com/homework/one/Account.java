@@ -39,4 +39,8 @@ public class Account {
         lock.unlock();
     }
 
+    public boolean tryLock() {
+        return lock.tryLock();
+    }
+
 }

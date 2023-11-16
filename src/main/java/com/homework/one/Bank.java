@@ -9,7 +9,7 @@ public class Bank {
 
         while (true) {
             try {
-                Thread.sleep((long) (Math.random() * 9000) + 1000);
+                Thread.sleep(1000);
             } catch (InterruptedException e) {
                 e.printStackTrace();
             }
